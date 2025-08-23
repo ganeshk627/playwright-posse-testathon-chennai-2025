@@ -13,13 +13,13 @@ accessKey: rJfhYQtD1xnMqxsGYZKB
 # Set 'projectName' to the name of your project. Example, Marketing Website
 projectName: BrowserStack Samples 
 # Set `buildName` as the name of the job / testsuite being run
-buildName: browserstack build 
+buildName: browserstack_build
 # `buildIdentifier` is a unique id to differentiate every execution that gets appended to
 # buildName. Choose your buildIdentifier format from the available expressions:
 # ${BUILD_NUMBER} (Default): Generates an incremental counter with every execution
 # ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
 # Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
-buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
+buildIdentifier: 'testbuildnew' # Supports strings along with either/both ${expression}
 
 # =======================================
 # Platforms (Browsers / Devices to test)
