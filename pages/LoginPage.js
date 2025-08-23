@@ -1,4 +1,5 @@
 import { expect } from "@playwright/test";
+import { dashboardConfig } from "../configs/page-config";
 
 export class LoginPage {
 
@@ -13,21 +14,10 @@ export class LoginPage {
         await this.page.getByText(password, { exact: true }).click();
         await this.page.getByRole('button', { name: 'Log In' }).click();
         await expect(this.page).toHaveURL(dashboardConfig.URL);
-        logger.info('Successfully navigated to Dashboard page');
+        console.log('Successfully navigated to Dashboard page');
         return new DashboardPage(this.page);
     };
 
-    async clickForgotPasswordLink() {
-        await this.page.locator(forgotPasswordLink).click();
-        await expect(this.page).toHaveURL(forgotpasswordConfig.URL);
-        logger.info('Navigated to password reset page');
-    }
-
-    async clickForgotLoginLink() {
-        await this.page.locator(forgotLoginLink).click();
-        await expect(this.page).toHaveURL(forgotloginConfig.URL);
-        logger.info('Navigated to login reset page');
-    }
 
 
 
