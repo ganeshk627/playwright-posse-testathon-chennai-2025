@@ -4,7 +4,7 @@ import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
 
 
-test('Login Test @smoke', async({page})=>{
+test('Login & Logout Test : TC-128, TC-129', async({page})=>{
     const homePage = new HomePage(page);
     const loginPage = new LoginPage(page);
 
@@ -20,6 +20,9 @@ test('Login Test @smoke', async({page})=>{
     });
     await test.step('Validate dashboard', async () => {
         await loginPage.validateDashboard();
+    });
+    await test.step('Logout from Dashboard', async () => {
+        await loginPage.logout();
     });
 
 })

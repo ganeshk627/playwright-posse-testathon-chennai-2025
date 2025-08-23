@@ -20,8 +20,13 @@ export class LoginPage {
     };
 
     async validateDashboard() {
-         await expect(this.page).toHaveURL(dashboardConfig.URL);
+        await expect(this.page).toHaveURL(dashboardConfig.URL);
         console.log('Successfully navigated to Dashboard page');
+    }
+
+    async logout() {
+        await this.page.getByRole('link', { name: 'Logout' }).click();
+        console.log('Logout button clicked');
     }
 
 
