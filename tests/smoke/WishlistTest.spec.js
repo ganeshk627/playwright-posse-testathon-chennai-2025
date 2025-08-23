@@ -42,18 +42,17 @@ test('Verify that user can remove the product from the favorite tab : TC-131', a
 test('Verify that vendor filters (Apple, Samsung, Google, OnePlus) are working as expected : TC-132', async ({ page }) => {
     const homePage = new HomePage(page);
     const loginPage = new LoginPage(page);
-    await page.goto('/');
-    console.log(`Navigated to ${await page.url()}`);
-    await homePage.openLoginPage();
-
-    await test.step('Opening Login Page', async () => {
-    });
-    await test.step('Enter username and password', async () => {
+    await test.step('Login and validate dashboard', async () => {
+        await page.goto('/');
+        console.log(`Navigated to ${await page.url()}`);
+        await homePage.openLoginPage();
         await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
         console.log('Entered username and password');
-
+        await loginPage.validateDashboard();
     });
-    await homePage.applyOnePlusFilter();
+    await test.step('Apply OnePlus filter', async () => {
+        await homePage.applyOnePlusFilter();
+    });
 })
 
 
