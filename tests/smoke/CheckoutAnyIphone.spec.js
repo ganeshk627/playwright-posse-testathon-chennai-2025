@@ -11,9 +11,9 @@ import { CheckoutPage } from '../../pages/CheckoutPage';
 test('Checkout any Iphone product: TC-128, TC-129', async({page})=>{
     const product_description = 'iPhone 12';
     const shippingDetails = {
-        firstName: 'Ganesh',
-        lastName: 'Kanna',
-        address: '11th cross avenue',
+        firstName: 'Harry',
+        lastName: 'Potter',
+        address: '9 Privet Drive',
         state: 'Puducherry',
         postalCode: '605014'
     };
@@ -38,7 +38,7 @@ test('Checkout any Iphone product: TC-128, TC-129', async({page})=>{
         await productPage.addProductToCart(product_description);
     });
     await test.step('Checkout cart items', async () => {
-        await cartPage.openCartTray();
+        // await cartPage.openCartTray();
         await cartPage.checkoutCartItems();
     });
     await test.step('Complete shipping details', async () => {

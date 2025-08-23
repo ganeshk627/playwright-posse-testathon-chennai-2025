@@ -9,19 +9,19 @@ export class CheckoutPage {
     };
 
 async completeShippingDetails(firstName, lastName, address, state, postalCode) {
-    await page.getByRole('textbox', { name: 'First Name' }).click();
-    await page.getByRole('textbox', { name: 'First Name' }).fill('Ganesh');
-    await page.getByRole('textbox', { name: 'Last Name' }).click();
-    await page.getByRole('textbox', { name: 'Last Name' }).fill('Kanna');
-    await page.getByRole('textbox', { name: 'Address' }).click();
-    await page.getByRole('textbox', { name: 'Address' }).fill('11th cross avenue');
-    await page.getByRole('textbox', { name: 'State/Province' }).click();
-    await page.getByRole('textbox', { name: 'State/Province' }).fill('Puducherry');
-    await page.getByRole('textbox', { name: 'Postal Code' }).click();
-    await page.getByRole('textbox', { name: 'Postal Code' }).fill('605014');
-
-    await page.getByRole('button', { name: 'Submit' }).click({delay: 2000});
-  
+    console.log('Filling shipping details:', { firstName, lastName, address, state, postalCode });
+    await this.page.getByRole('textbox', { name: 'First Name' }).click();
+    await this.page.getByRole('textbox', { name: 'First Name' }).fill(firstName);
+    await this.page.getByRole('textbox', { name: 'Last Name' }).click();
+    await this.page.getByRole('textbox', { name: 'Last Name' }).fill(lastName);
+    await this.page.getByRole('textbox', { name: 'Address' }).click();
+    await this.page.getByRole('textbox', { name: 'Address' }).fill(address);
+    await this.page.getByRole('textbox', { name: 'State/Province' }).click();
+    await this.page.getByRole('textbox', { name: 'State/Province' }).fill(state);
+    await this.page.getByRole('textbox', { name: 'Postal Code' }).click();
+    await this.page.getByRole('textbox', { name: 'Postal Code' }).fill(postalCode);
+    await this.page.getByRole('button', { name: 'Submit' }).click({delay: 2000});
+    console.log('Shipping details submitted');
 }
 
 };
