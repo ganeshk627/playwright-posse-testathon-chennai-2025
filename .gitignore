@@ -7,3 +7,12 @@ node_modules/
 /playwright/.cache/
 .env
 .DS_Store
+
+
+# BrowserStack
+browserstack.err
+log/
+local.log
+browserstackSetupConfig.json
+playwright-browserstack-sdk.config.js
+playwright-browserstack-sdk.config.temp.json

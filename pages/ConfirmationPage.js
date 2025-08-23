@@ -19,8 +19,16 @@ export class ConfirmationPage {
     async saveOrderNumberToJson() {
         const orderNumber = await this.orderNumberLabel.innerText();
         console.log('Order number:', orderNumber);
-        // Here you can add code to save the order number to a JSON file
         const filePath = 'outputs/orders.json';
+        const folderPath = 'outputs';
+
+        // Ensure the folder exists
+        try {
+            await fs.mkdir(folderPath, { recursive: true });
+        } catch (err) {
+            console.error('Error creating folder:', err);
+        }
+
         let orders = [];
         try {
             const data = await fs.readFile(filePath, 'utf-8');

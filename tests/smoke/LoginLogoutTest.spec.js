@@ -1,10 +1,10 @@
 // @ts-check
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { HomePage } from '../../pages/HomePage';
 import { LoginPage } from '../../pages/LoginPage';
 
 
-test('Login & Logout Test : TC-128 TC-129', async({page})=>{
+test('Login & Logout Test : TC-128 TC-129', async ({ page }) => {
     const homePage = new HomePage(page);
     const loginPage = new LoginPage(page);
 

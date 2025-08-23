@@ -1,5 +1,5 @@
 // @ts-check
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { HomePage } from '../../pages/HomePage';
 import { LoginPage } from '../../pages/LoginPage';
 import { ProductPage } from '../../pages/ProductsPage';
@@ -8,7 +8,7 @@ import { ConfirmationPage } from '../../pages/ConfirmationPage';
 import { CheckoutPage } from '../../pages/CheckoutPage';
 
 
-test('Checkout any Iphone product: TC-132 TC-135 ', async({page})=>{
+test('Checkout any Iphone product: TC-135', async ({ page }) => {
     const product_description = 'iPhone 12';
     const shippingDetails = {
         firstName: 'Harry',
@@ -27,7 +27,7 @@ test('Checkout any Iphone product: TC-132 TC-135 ', async({page})=>{
 
 
     await test.step('Login and validate dashboard', async () => {
-            // await page.goto('/');
+        // await page.goto('/');
         await homePage.openApplication();
         await homePage.openLoginPage();
         await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
@@ -51,5 +51,8 @@ test('Checkout any Iphone product: TC-132 TC-135 ', async({page})=>{
     });
     await test.step('Validate order confirmation message', async () => {
         await confirmationPage.validateOrderConfirmationMessage();
+    });
+    await test.step('Save order number to JSON', async () => {
+        await confirmationPage.saveOrderNumberToJson();
     });
 })
