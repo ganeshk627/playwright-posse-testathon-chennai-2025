@@ -36,8 +36,8 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   reporter: [
-        ['html', { open: 'never' }],
-    ['list', { printSteps: true }], 
+    ['html', { open: 'never' }],
+    ['list', { printSteps: true }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -50,6 +50,7 @@ export default defineConfig({
     launchOptions: {
       slowMo: 1000,
     },
+    headless: process.env.HEADLESS === 'true' || false,
     actionTimeout: 20 * 1000,
     navigationTimeout: 60 * 1000,
   },
@@ -61,20 +62,27 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+     {
+      name: 'chrome',
+      use: {
+        browserName: 'chromium',
+        channel: 'chrome',
+      },
     },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
