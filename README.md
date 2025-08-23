@@ -1,0 +1,1 @@
+https://test-management.browserstack.com/projects/2291795/insights/overview/DEFAULT?public_token=f9235e1fa0399890753d1bb701bf14cadc1e72b63d497f44489c73cccb48b53b36e77a6c31d070ba56dd86aaf5957978b68ae4514a5e97482f9c4f2bacfc100d&public_token_id=6364
