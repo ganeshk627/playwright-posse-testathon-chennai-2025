@@ -1,7 +1,7 @@
 // @ts-check
 import {test, expect} from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { LoginPage } from '../pages/LoginPage';
+import { HomePage } from '../../pages/HomePage';
+import { LoginPage } from '../../pages/LoginPage';
 
 
 test('Login & Logout Test : TC-128, TC-129', async({page})=>{
