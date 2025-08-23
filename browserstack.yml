@@ -6,20 +6,21 @@
 userName: ganeshk_dauw7E
 accessKey: rJfhYQtD1xnMqxsGYZKB
 
+
 # ======================
 # BrowserStack Reporting
 # ======================
 # The following capabilities are used to set up reporting on BrowserStack:
 # Set 'projectName' to the name of your project. Example, Marketing Website
-projectName: BrowserStack Samples 
+projectName: Hogwarts Mystery
 # Set `buildName` as the name of the job / testsuite being run
-buildName: browserstack_build
+buildName: Expecto Patronum
 # `buildIdentifier` is a unique id to differentiate every execution that gets appended to
 # buildName. Choose your buildIdentifier format from the available expressions:
 # ${BUILD_NUMBER} (Default): Generates an incremental counter with every execution
 # ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
 # Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
-buildIdentifier: 'testbuildnew' # Supports strings along with either/both ${expression}
+buildIdentifier: 2.o # Supports strings along with either/both ${expression}
 
 # =======================================
 # Platforms (Browsers / Devices to test)
@@ -27,17 +28,13 @@ buildIdentifier: 'testbuildnew' # Supports strings along with either/both ${expr
 # Platforms object contains all the browser / device combinations you want to test on.
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 platforms:
-  - os: Windows
-    osVersion: 11
-    browserName: chrome
-    browserVersion: latest
+  # - os: Windows
+  #   osVersion: 11
+  #   browserName: Edge
+  #   browserVersion: latest
   - os: OS X
-    osVersion: Ventura
-    browserName: playwright-webkit
-    browserVersion: latest
-  - os: Windows
-    osVersion: 11
-    browserName: playwright-firefox
+    osVersion: Sequoia
+    browserName: chrome
     browserVersion: latest
 
 # =======================
@@ -49,7 +46,7 @@ platforms:
 # Example 1 - If you have configured 3 platforms and set `parallelsPerPlatform` as 2, a total of 6 (2 * 3) parallel threads will be used on BrowserStack
 #
 # Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
-parallelsPerPlatform: 1
+parallelsPerPlatform: 2
 
 # ==========================================
 # BrowserStack Local
@@ -57,7 +54,7 @@ parallelsPerPlatform: 1
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: true # <boolean> (Default false)
+browserstackLocal: false # <boolean> (Default false)
 # browserStackLocalOptions:
 # Options to be passed to BrowserStack local in-case of advanced configurations
   # localIdentifier: # <string> (Default: null) Needed if you need to run multiple instances of local.
