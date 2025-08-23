@@ -18,10 +18,8 @@ test('Login Test @smoke', async({page})=>{
         console.log('Entered username and password');
 
     });
-
-    await test.step('Validate dashboard', async () => {  
-        await expect(page).toHaveURL(/.*account\/account/).catch((error)=> {console.error(error); throw error});      
-        console.log('Successfully navigated to Dashboard page');
+    await test.step('Validate dashboard', async () => {
+        await loginPage.validateDashboard();
     });
 
 })
