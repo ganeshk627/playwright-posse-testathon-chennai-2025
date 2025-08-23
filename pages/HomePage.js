@@ -7,9 +7,14 @@ export class HomePage {
         this.page = page;
     };
 
+    async openApplication() {
+        await this.page.goto(`${process.env.URL}`);
+        console.log(`Navigated to ${await this.page.url()}`);
+    }
+
     async openLoginPage() {
         await this.page.getByRole('link', { name: 'Sign In' }).click();
-        await expect(this.page).toHaveURL(loginConfig.URL);
+        await expect(this.page).toHaveURL(`${process.env.URL}${loginConfig.URL}`);
         console.log('Login page opened');
     }
 

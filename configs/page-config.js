@@ -7,5 +7,5 @@ export const loginConfig = {
 
 export const dashboardConfig = {
     TITLE: 'StackDemo',
-    URL: /\?signin=true/,
+    URL: '?signin=true',
 }

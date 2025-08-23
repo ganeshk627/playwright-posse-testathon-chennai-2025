@@ -8,7 +8,7 @@ import { ConfirmationPage } from '../../pages/ConfirmationPage';
 import { CheckoutPage } from '../../pages/CheckoutPage';
 
 
-test('Checkout any Iphone product: TC-128, TC-129', async({page})=>{
+test('Checkout any Iphone product: TC-132 TC-135 ', async({page})=>{
     const product_description = 'iPhone 12';
     const shippingDetails = {
         firstName: 'Harry',
@@ -27,11 +27,10 @@ test('Checkout any Iphone product: TC-128, TC-129', async({page})=>{
 
 
     await test.step('Login and validate dashboard', async () => {
-        await page.goto('/');
-        console.log(`Navigated to ${await page.url()}`);
+            // await page.goto('/');
+        await homePage.openApplication();
         await homePage.openLoginPage();
         await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
-        console.log('Entered username and password');
         await loginPage.validateDashboard();
     });
     await test.step('Add product to cart', async () => {

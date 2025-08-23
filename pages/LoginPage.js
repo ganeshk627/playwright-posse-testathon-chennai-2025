@@ -20,7 +20,7 @@ export class LoginPage {
     };
 
     async validateDashboard() {
-        await expect(this.page).toHaveURL(dashboardConfig.URL);
+        await expect(this.page).toHaveURL(`${process.env.URL}${dashboardConfig.URL}`);
         console.log('Successfully navigated to Dashboard page');
     }
 
