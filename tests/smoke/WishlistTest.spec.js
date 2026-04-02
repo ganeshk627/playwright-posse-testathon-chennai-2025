@@ -8,7 +8,6 @@ test('Verify that user can see the favorites after likes the product under the f
     const loginPage = new LoginPage(page);
 
     await test.step('Login and validate dashboard', async () => {
-        // await page.goto('/');
         await homePage.openApplication();
         await homePage.openLoginPage();
         await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
@@ -29,7 +28,6 @@ test('Verify that user can remove the product from the favorite tab : TC-131', a
     const homePage = new HomePage(page);
     const loginPage = new LoginPage(page);
     await test.step('Login and validate dashboard', async () => {
-        // await page.goto('/');
         await homePage.openApplication();
         await homePage.openLoginPage();
         await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
@@ -48,7 +46,6 @@ test('Verify that vendor filters (Apple, Samsung, Google, OnePlus) are working a
     const homePage = new HomePage(page);
     const loginPage = new LoginPage(page);
     await test.step('Login and validate dashboard', async () => {
-        // await page.goto('/');
         await homePage.openApplication();
         await homePage.openLoginPage();
         await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
