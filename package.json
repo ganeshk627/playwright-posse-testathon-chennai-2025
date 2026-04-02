@@ -18,9 +18,12 @@
   "devDependencies": {
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.3.0",
-    "dotenv": "^17.2.1",
-    "fs-extra": "^11.3.1",
     "browserstack-local": "^1.5.1",
-    "browserstack-node-sdk": "latest"
+    "browserstack-node-sdk": "latest",
+    "dotenv": "^17.2.1",
+    "fs-extra": "^11.3.1"
+  },
+  "dependencies": {
+    "@lambdatest/playwright-node-sdk": "^1.0.2"
   }
 }
