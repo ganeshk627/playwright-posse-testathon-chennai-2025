@@ -1,10 +1,10 @@
 # Access your LambdaTest credentials from https://accounts.lambdatest.com/security/username-accesskey
 # It's recommended to use environment variables for your credentials.
-user: {YOUR_LAMBDATEST_USERNAME}
-accessKey: {YOUR_LAMBDATEST_ACCESS_KEY}
+user: ganeshkqaautomation
+accessKey: LT_gfV4vaRGnRo9poKKeJ8VrDjenNZSRySzDa8VStSmUaGYfzM
 
 # Build name for your test run
-build: "Playwright Node.js SDK Build"
+build: "Playwright NodeJS Ganesh"
 
 # Name of the test suite
 name: "Playwright Test Suite"
@@ -20,7 +20,7 @@ projectName: "Playwright Node SDK Testing"
 
 # Define the number of parallel sessions for each configuration
 # Check your parallel session limits at https://billing.lambdatest.com/billing/subscriptions
-parallelsPerPlatform: 2
+parallelsPerPlatform: 1
 
 # Optional: Advanced settings applied to all tests
 network: false # To capture network HAR logs (may impact test execution speed)
